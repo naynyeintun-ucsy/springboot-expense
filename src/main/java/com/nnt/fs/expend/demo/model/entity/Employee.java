@@ -3,9 +3,11 @@ package com.nnt.fs.expend.demo.model.entity;
 import com.nnt.fs.expend.demo.constant.TableNames;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table (name = TableNames.EMPLOYEE)
@@ -33,5 +35,9 @@ public class Employee {
 
     @Column (name = "SALARY")
     BigDecimal salary;
+
+    @Column (name = "CREATED_DATE")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    Date createdDate;
 
 }

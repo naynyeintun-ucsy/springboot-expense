@@ -16,7 +16,7 @@ public class EmployeeService {
     EmployeeRepository employeeRepository;
 
     public List<Employee> findAll(){
-        return employeeRepository.findAll();
+        return employeeRepository.findAllAndOrderByCreatedDate();
     }
 
     public Page<Employee> findAll(Pageable pageable){
