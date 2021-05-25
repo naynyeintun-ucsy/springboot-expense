@@ -40,6 +40,7 @@ public class EmployeeController {
     @CrossOrigin
     @PutMapping (value = "/employee")
     public Employee updateEmployee (@RequestBody Employee employee){
+        System.out.println("incoming employee object is "+employee);
         Employee oldEmployee = employeeService.findById(employee.getUserId());
 
         if(oldEmployee == null){
